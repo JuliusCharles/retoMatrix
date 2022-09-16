@@ -15,7 +15,7 @@ public class MatrixValidatingService {
 		if (valid) {
 			List<Integer> sizeLists = matrix.stream().map(list -> list.size()).collect(Collectors.toList());
 			Integer unico = sizeLists.stream().distinct().collect(Collectors.toList()).size();
-			valid = (unico == 0 && sizeLists.size() == unico) ? Boolean.FALSE : Boolean.TRUE;
+			valid = (unico == 1 && sizeLists.size() == sizeLists.get(0)) ? Boolean.TRUE : Boolean.FALSE;
 		}
 
 		if (!valid) {
